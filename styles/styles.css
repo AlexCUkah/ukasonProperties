@@ -1,0 +1,356 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* Basic Reset Styles */
+body,
+h1,
+h2,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding-top: 70px;
+    /* Height of the fixed header */
+    padding-bottom: 35px;
+    /* Height of the fixed footer */
+    /* Adjust the padding values above to match the actual height of your header/footer */
+    margin: 0;
+    /* Other styles */
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Header and Navigation Styles */
+header {
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    /* Keep the header above other content */
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+nav ul li {
+    padding: 0 20px;
+}
+
+/* Logo styles adjusted for size without affecting the navigation */
+.header-logo {
+    height: 85px;
+    /* Adjust height as necessary for  logo */
+    width: 170px;
+    /* Adjust width as necessary for logo */
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    padding: 0 0px;
+}
+
+/* Hero Section Styles */
+.hero {
+    display: flex;
+    padding-top: 60px;
+    justify-content: space-between;
+    /* Space between the child elements */
+    align-items: center;
+    position: relative;
+    /* Allows absolute positioning relative to this container */
+    min-height: calc(100vh - 80px);
+    /* Full height minus header and footer */
+    background-size: cover;
+    background-position: center;
+}
+
+.column {
+    padding: 10px;
+    /* Padding inside each column */
+    box-sizing: border-box;
+    /* Ensures padding is included in width calculation */
+}
+
+/* Adjustments for the left and right text columns */
+.left,
+.right {
+    flex: 1;
+    color: black;
+    /* Added padding to move content away from the edges */
+    padding-left: 2%;
+    /* Increased padding for the left column */
+    padding-right: 2%;
+    /* Increased padding for the right column */
+    margin: 0 3%;
+    /* Increased margin for a balanced whitespace */
+}
+
+/* Center column for the carousel image */
+.center {
+    flex: 2;
+    padding: 0;
+    /* Removed padding to allow image to be as large as possible */
+}
+
+/* Carousel container styles */
+.carousel {
+    width: 100%;
+    /* Carousel container takes full width of its parent */
+    display: flex;
+    justify-content: center;
+    /* Center the image horizontally */
+    align-items: center;
+    /* Center the image vertically */
+    padding: 0;
+}
+
+.centered-image {
+    display: block;
+    /* Change the display to block */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Carousel image styles */
+.carousel img {
+    width: 100%;
+    /* Image takes some width of container*/
+    height: auto;
+    /* Height is auto to maintain aspect ratio */
+    margin: 0;
+    /* Add this line to remove any margins */
+    display: block;
+}
+
+.carousel img:hover {
+    transform: scale(1.05);
+    /*  scale value  */
+    cursor: pointer;
+    /* Change cursor to indicate clickable */
+    transition: transform 0.3s ease;
+    /* Smooth transition for the scaling effect */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* Remove extra space below images */
+}
+
+h1,
+h2 {
+    font-weight: bold;
+    /* Makes headers stand out */
+    margin-bottom: 0.5em;
+    /* Adds space below headers for better readability */
+}
+
+p {
+    font-size: 1rem;
+    /* Ensures text is neither too small nor too large */
+    line-height: 1.6;
+    /* Improves readability */
+    color: #555;
+    /* A softer color that's easier on the eyes */
+}
+
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* Footer spans across the bottom of the page */
+}
+
+
+/* Smaller screens (most phones) */
+@media (max-width: 576px) {
+
+
+    .hero {
+        /* Stack the text and image on top of each other for small screens */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left,
+    .right {
+        /* Full width for the text sections */
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        margin-bottom: 20px;
+        /* Add space between the text sections and the image */
+    }
+
+    .carousel img {
+        /* Adjust image to not be too large on small screens */
+        width: 90%;
+        /* Slightly less than full width for some padding */
+        margin-bottom: 20px;
+        /* Add space below the image */
+        margin-left: 10px;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    position: fixed;
+    margin-top: 5px;
+    width: 100%;
+    /* Footer spans across the bottom of the page */
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .hero {
+        /* Adjust the hero layout for tablets */
+        display: flex;
+        flex-direction: row;
+        /* Line up child divs horizontally */
+        justify-content: space-between;
+        padding: 1em;
+    }
+
+    .left,
+    .right {
+        width: 25%;
+        /* Adjust the width of columns */
+        margin: 0;
+        /* Adjust margin */
+        padding: 1em;
+        /* More padding for readability */
+    }
+
+    .center {
+        width: 50%;
+        /* Allocate more width to the center column */
+        padding: 1em;
+        /* Adjust padding  */
+    }
+
+
+    nav ul {
+        flex-direction: row;
+        /* Align menu items in a row */
+        justify-content: flex-start;
+        /* Adjust alignment as needed */
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+    /* Further adjustments for larger tablets and desktops */
+    .left,
+    .center,
+    .right {
+        flex-basis: auto;
+    }
+
+    /* For navigation menus that expand horizontally on large screens */
+    nav ul li {
+        padding: 0.5em 1em;
+        /* More padding around each menu item */
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+    /* Adjustments for extra large screens */
+    .left,
+    .right {
+        padding: 2em;
+        /* More padding for large screens */
+    }
+
+    .center {
+        flex-basis: 60%;
+        /* Adjust width */
+    }
+
+    footer,
+    header {
+        padding: 1.5em 2em;
+        /* Adjust for larger screens */
+    }
+}
+
+@media (max-height: 858px) and (max-width: 320px) {
+
+    header,
+    nav ul li,
+    nav a {
+        padding: 0.2rem;
+        /* Further reduce padding for very small heights */
+        font-size: 0.7rem;
+        /* Further reduce font size for very small heights */
+    }
+
+    /* Adjusting main content padding */
+    body {
+        padding-top: 50px;
+        /* Adjust padding-top to new header height */
+        padding-bottom: 30px;
+        /* Adjust padding-bottom if necessary */
+    }
+
+    /* Adjustments for content */
+    .hero,
+    .column,
+    .blog-post,
+    .carousel,
+    .carousel img,
+    .footer {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        /* Ensure they do not overflow the screen width */
+    }
+
+    /* Footer adjustment */
+    footer {
+        position: relative;
+        padding: 10px 0;
+        /* Reduce padding to save space */
+        font-size: 0.7rem;
+        /* Reduce font size */
+    }
+}

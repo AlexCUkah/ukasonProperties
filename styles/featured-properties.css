@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding-top: 160px;
+    /* Adjust  value to the height of header */
+    padding-bottom: 100px;
+    /* Adjust value to the height offooter */
+    margin: 0;
+}
+
+
+.featured-properties {
+    background: #f8f8f8;
+}
+
+.properties-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 700px;
+    margin: 0 auto;
+    /* Centers the grid */
+}
+
+.property-card {
+    position: relative;
+    /* Position relative for absolutely positioned pseudo-element */
+    width: calc(50% - 40px);
+    /* Adjust width calculation as necessary */
+    margin: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* Ensures nothing spills outside the card */
+}
+
+/* Adjusts the aspect ratio to be square based on width */
+
+
+.property-image {
+    position: relative;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.property-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    /* Semi-transparent overlay */
+    padding: 15px;
+    text-align: center;
+}
+
+.property-info h3,
+.property-info p {
+    margin: 0;
+    /* Removes default margin */
+}
+
+.property-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+#page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 5;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+.property-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Dark overlay for text */
+    opacity: 0;
+    /* Hide initially */
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+    /* Transition for fade effect */
+    visibility: hidden;
+    /* Use visibility to prevent mouse events when not shown */
+}
+
+.property-card:hover .overlay {
+    opacity: 1;
+    /* Show on hover */
+    visibility: visible;
+    /* Make visible */
+    transition-delay: 0s;
+    /* Apply visibility immediately */
+}
+
+.property-card:hover .property-image img {
+    transform: scale(1.1);
+    /* Enlarge image */
+}
+
+.text {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .property-card {
+        flex: 0 1 calc(100% - 40px);
+        /* Full width on smaller screens */
+    }
+
+    .properties-grid {
+        height: auto;
+        /* On smaller screens, let the content define the height */
+        padding-bottom: 60px;
+        /* Adjust padding to ensure visibility above the footer */
+    }
+}
+
+@media(min-width: 1200px) {
+    .properties-grid {
+        max-width: 1200px;
+        /* Increase the maximum width of the grid */
+        justify-content: space-between;
+        /* Adjust to space-between if you want more space between cards */
+    }
+
+    .property-card {
+        width: calc(33.333% - 40px);
+        /* Increase the width of each property card to take up 1/3 of the grid */
+        margin: 20px;
+        /* Keep consistent margin */
+    }
+
+    .property-image img {
+        height: 300px;
+        /* Adjust the height to a fixed value for a larger, consistent look */
+        object-fit: cover;
+        /* This will cover the area without stretching the image */
+    }
+
+    .property-info {
+        padding: 20px;
+        /* Increase padding for better spacing */
+    }
+}

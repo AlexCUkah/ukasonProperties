@@ -1,0 +1,127 @@
+main {
+    padding: 20px;
+
+}
+
+section {
+    margin-bottom: 40px;
+
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+
+.blog-post {
+    max-width: 60%;
+    /* This sets the maximum width of the content area */
+    margin: 40px auto;
+    /* This centers the section and adds spacing above and below */
+    padding: 20px;
+    /* adds padding inside the sections */
+}
+
+.blog-image {
+    max-width: 100%;
+    /* Adjust this value to set the maximum size of the images */
+    width: 100%;
+    /* This will make it responsive */
+    height: auto;
+    /* This maintains the image aspect ratio */
+    margin: 0 auto 20px;
+    /* This centers the image and adds spacing below it */
+    display: block;
+    /* This ensures the image is treated as a block-level element for margin auto to work */
+}
+
+.carousel-container .blog-image:first-of-type {
+    transform: translateX(0%);
+}
+
+.blog-content {
+    /* Styles for the text content go here. */
+    text-align: left;
+    /* Aligns text to the left */
+}
+
+.blog-content p {
+    color: #666;
+    /* Lighter grey color for the description */
+    font-size: 1rem;
+    /* Base font size for the description */
+    line-height: 1.6;
+    /* Line height for readability */
+    text-align: justify;
+    /* Justify align the description */
+    margin-bottom: 20px;
+    /* Adds space below each paragraph */
+}
+
+.blog-content h2 {
+    text-align: center;
+    /* Centers the headings  */
+    margin-bottom: 20px;
+    /* Adds spacing below the headings */
+}
+
+.blog-content p {
+    line-height: 1.6;
+    /* Increases the line height for better readability */
+    font-size: 1rem;
+    /* Adjusts the font size as needed */
+}
+
+.carousel-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    /* Adjust based on your layout */
+    height: auto;
+    /* This height will be dynamic based on the image, but you could set a specific height */
+}
+
+
+
+/* Responsive design to ensure the layout works on all device sizes */
+@media (max-width: 800px) {
+    .blog-post {
+        width: 100%;
+        /* Use full width on small screens */
+        max-width: none;
+        /* Remove max-width on small screens */
+        margin: 20px;
+        /* Reduced margin on smaller screens */
+        padding: 10px;
+        /* Reduce padding on smaller screens to use the space more efficiently */
+    }
+
+    .blog-content p,
+    .blog-content h2 {
+        font-size: 1.1rem;
+        /* Slightly larger font size for readability */
+        line-height: 1.8;
+        /* Increased line height for better readability */
+    }
+
+    .blog-content p {
+        text-align: left;
+        /* Align text to the left for better readability */
+        margin-bottom: 1.5em;
+        /* Increased space between paragraphs */
+    }
+
+    .blog-content h2 {
+        text-align: center;
+        /* Keep headers centered */
+    }
+
+    .blog-image {
+        width: 100%;
+        /* Ensure images are not wider than their container */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin-bottom: 20px;
+        /* Maintain space below images */
+    }
+}

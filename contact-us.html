@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ukason Stays</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/contact.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="featured-properties.html">Featured Properties</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+            <a href="index.html" class="logo-link">
+                <img src="images/ukason_logo.png" alt="Ukason Logo" class="header-logo">
+            </a>
+        </nav>
+    </header>
+    <main>
+        <div id="container">
+            <div class="logo-container">
+                <!-- Make sure to replace 'path-to-your-logo.png' with the actual path to your logo image -->
+                <img src="images/ukason_logo.png" alt="Ukason Logo" class="form-logo">
+            </div>
+            <form id="contact-form" action="https://formspree.io/f/xyyrbwed" method="POST">
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                <input type="email" name="_replyto" id="email" placeholder="Your Email" required>
+                <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Ukason Stays. All rights reserved.</p>
+    </footer>
+    <script src="scripts/contact-us.js"></script>
+</body>
+
+</html>
